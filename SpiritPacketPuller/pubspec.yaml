@@ -1,5 +1,5 @@
 name: SpiritPacketPuller
-description: A new Flutter project.
+description: Analyses IDA-generated pseudocode for packet structure and upcodes. A Flutter-based re-implementation of the GUI implementation of MaplePacketPuller. WINDOWS SPECIFC.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,7 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  lint: ^1.3.0
+  dependencies:
+  logger: ^0.9.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -32,7 +34,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
