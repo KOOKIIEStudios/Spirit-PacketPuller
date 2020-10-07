@@ -24,8 +24,19 @@ dependencies:
   flutter:
     sdk: flutter
   lint: ^1.3.0
-  dependencies:
   logger: ^0.9.4
+  # Experimental plugin as place-holder:
+  # COMMENTED IMPORT OUT BECAUSE IMPORT FAILED. https://github.com/flutter/flutter/issues/66224
+  # Devs still working on a fix. See issue linked above
+  # window_size:
+    # This is only required because Flutter does not currently fully support window resizing on desktop
+    # This is be merged into the Flutter build and no longer required in future Flutter builds
+    # Note that this plugin currently only supports resizing and repositioning
+    # Minimising and maximising of windows is yet to be implemented at the time of writing
+    # git:
+      # url: git://github.com/google/flutter-desktop-embedding.git
+      # path: plugins/window_size
+      # ref: 5b3b930da18244ecf2a7140a0e33a9892273797c
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -76,3 +87,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: GillSans
+      fonts:
+        - asset: fonts/gillsans/Gill-Sans.otf
+        - asset: fonts/gillsans/Gill-Sans-Bold.otf
+          weight: 500
+        - asset: fonts/gillsans/Gill-Sans-Italic.otf
+          style: italic
+    - family: Effra
+      fonts:
+        - asset: fonts/effra/Effra.ttf
+        - asset: fonts/effra/Effra-Light.ttf
