@@ -1,6 +1,10 @@
-import 'package:flutter/cupertino.dart';
+//
+
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
+import '../models/input_list_model.dart';
+import '../models/output_list_model.dart';
 
 var logger = Logger(
     printer: PrettyPrinter()
@@ -9,6 +13,8 @@ var logger = Logger(
 
 // Instantiate InputList
 class InputList extends StatefulWidget{
+  InputList({Key key}) : super(key: key)
+
   @override
   InputListState createState(){
     logger.d("Creating state for InputList");
@@ -18,9 +24,6 @@ class InputList extends StatefulWidget{
 
 // State management for InputList
 class InputListState extends State<InputList>{
-  //TODO: Add instantiation logic after writing APIs
-  List<String> availableFiles = [];
-
   @override
   Widget build(BuildContext context) {
     logger.d("Building InputList");
@@ -28,19 +31,24 @@ class InputListState extends State<InputList>{
   }
 
   Widget _inputList(){
-    return ListView.builder(
-      itemBuilder: (context, index){
-        final element = availableFiles[index];
-        return Card(
-          child: ListTile(
-            title: Text(element),
-            onTap: (){
-              // TODO: Add logic for adding var element to OutputList
-              setState(() {
-
-              });
-            },
-          ),
+    return Consumer2<InputListModel, OutputListModel>(
+      builder: (context, inputList, outputList, child){
+        return ListView.builder(
+          itemBuilder: (context, index) {
+            List<String> availableFiles = inputList.availableFiles;
+            final element = availableFiles[index];
+            return Card(
+              child: ListTile(
+                key: ValueKey(element),
+                title: Text(element),
+                onTap: () {
+                  setState(() {
+                    outputList.select(element);
+                  });
+                },
+              ),
+            );
+          },
         );
       },
     );
@@ -50,6 +58,8 @@ class InputListState extends State<InputList>{
 
 // Instantiate OutputList
 class OutputList extends StatefulWidget{
+  OutputList({Key key}) : super(key: key)
+
   @override
   OutputListState createState(){
     logger.d("Creating state for OutputList");
@@ -59,7 +69,10 @@ class OutputList extends StatefulWidget{
 
 // State management for InputList
 class OutputListState extends State<OutputList>{
-  List<String> selectedFiles = [];
+  void select(element){
+    selectedFiles.add(element);
+    selectedFiles.sort();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +86,7 @@ class OutputListState extends State<OutputList>{
         final element = selectedFiles[index];
         return Card(
           child: ListTile(
+            key: ValueKey(element),
             title: Text(element),
             onTap: (){
               setState(() {
@@ -85,3 +99,6 @@ class OutputListState extends State<OutputList>{
     );
   }
 }
+
+
+// Contain the 2 lists in a row

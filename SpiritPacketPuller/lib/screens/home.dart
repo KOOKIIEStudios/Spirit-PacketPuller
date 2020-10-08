@@ -1,7 +1,9 @@
 // Home: Main (and only) window.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
+import 'lists.dart';
 
 var logger = Logger(
     printer: PrettyPrinter()
@@ -55,11 +57,13 @@ class Home extends StatelessWidget{
               Expanded(
                 child: Container(
                   height: 500,
+                  child: InputList(),
                 ),
               ),
               Expanded(
                 child: Container(
                   height: 500,
+                  child: OutputList(),
                 ),
               ),
             ],
