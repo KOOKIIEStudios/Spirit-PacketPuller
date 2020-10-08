@@ -13,7 +13,7 @@ var logger = Logger(
 
 // Instantiate InputList
 class InputList extends StatefulWidget{
-  InputList({Key key}) : super(key: key)
+  InputList({Key key}) : super(key: key);
 
   @override
   InputListState createState(){
@@ -58,7 +58,7 @@ class InputListState extends State<InputList>{
 
 // Instantiate OutputList
 class OutputList extends StatefulWidget{
-  OutputList({Key key}) : super(key: key)
+  OutputList({Key key}) : super(key: key);
 
   @override
   OutputListState createState(){
@@ -69,11 +69,6 @@ class OutputList extends StatefulWidget{
 
 // State management for InputList
 class OutputListState extends State<OutputList>{
-  void select(element){
-    selectedFiles.add(element);
-    selectedFiles.sort();
-  }
-
   @override
   Widget build(BuildContext context) {
     logger.d("Building OutputList");
@@ -81,21 +76,26 @@ class OutputListState extends State<OutputList>{
   }
 
   Widget _outputList(){
-    return ListView.builder(
-      itemBuilder: (context, index){
-        final element = selectedFiles[index];
-        return Card(
-          child: ListTile(
-            key: ValueKey(element),
-            title: Text(element),
-            onTap: (){
-              setState(() {
-                selectedFiles.remove(element);
-              });
-            },
-          ),
+    return Consumer2<InputListModel, OutputListModel>(
+      builder: (context, inputList, outputList, child){
+        return ListView.builder(
+          itemBuilder: (context, index){
+            List<String> selectedFiles = outputList.selectedFiles;
+            final element = selectedFiles[index];
+            return Card(
+              child: ListTile(
+                key: ValueKey(element),
+                title: Text(element),
+                onTap: (){
+                  setState(() {
+                    outputList.deselect(element);
+                  });
+                },
+              ),
+            );
+          },
         );
-      },
+       }
     );
   }
 }

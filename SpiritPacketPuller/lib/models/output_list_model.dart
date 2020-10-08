@@ -44,7 +44,7 @@ class OutputListModel extends ChangeNotifier{
   }
 
   // Remove function. Removes file from Output List
-  void remove(String file){
+  void deselect(String file){
     logger.d("Removing file $file !");
     _fileList.remove(file);
   }
