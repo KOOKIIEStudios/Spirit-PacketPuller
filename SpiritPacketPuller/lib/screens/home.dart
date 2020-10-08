@@ -1,9 +1,12 @@
 // Home: Main (and only) window.
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
 import 'lists.dart';
+import 'buttons.dart';
+import 'constants.dart';
 
 var logger = Logger(
     printer: PrettyPrinter()
@@ -12,9 +15,6 @@ var logger = Logger(
 class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: Add mutable List = List from Models (reference)
-    // TODO: Add 2 mutable Lists, for storing Input and Output (spread)
-    // var list2 = [...list1];
     logger.d("Start building Home");
     return Scaffold(
       appBar: AppBar(
@@ -27,32 +27,23 @@ class Home extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // Row to hold 2 labels of lists:
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // TODO: Insert the 2 lists
               Text(
-                "Files Detected:",
-                style: TextStyle(
-                  fontFamily: "GillSans",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                inputListLabel,
+                style: labelStyle,
               ),
               Text(
-                "Files Selected:",
-                style: TextStyle(
-                  fontFamily: "GillSans",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                outputListLabel,
+                style: labelStyle,
               ),
             ],
           ),
           // Row to hold 2 lists
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            // coloured boxes as placeholders for lists
             children: [
               Expanded(
                 child: Container(
@@ -81,92 +72,37 @@ class Home extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      // TODO: Refactor out ButtonBar
                       Expanded(
-                        child: ButtonBar(
-                          // Row for Select/Refresh/Deselect buttons
-                          mainAxisSize: MainAxisSize.min,
-                          alignment: MainAxisAlignment.start,
-                          buttonHeight: 60,
-                          buttonMinWidth: 300,
-                          buttonPadding: const EdgeInsets.only(left: 8, right: 30),
-                          children: [
-                            // TODO: Refactor text to a constants file
-                            // TODO: Add button logic
-                            TextButton(onPressed: null, child: Text("Select All")),
-                            TextButton(onPressed: null, child: Text("Refresh")),
-                            TextButton(onPressed: null, child: Text("Deselect All")),
-                          ],
-                        ),
+                        flex: 2,
+                        child: ButtonsBar()
                       ),
-                      // TODO: Refactor out radio buttons
                       Expanded(
+                        flex: 1,
                         child: Container(
-                          height: 40,
+                          height: 20,
                           child: Row(
                             children: [
-                              // TODO: Refactor text to a constants file
                               // TODO:: Add Radio logic
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                height: 40,
-                                width: 220,
-                                child: ListTile(
-                                  title: const Text("Normal Analysis"),
-                                  leading: Radio(
-                                      value: null,
-                                      groupValue: null,
-                                      onChanged: null
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                height: 40,
-                                width: 230,
-                                child: ListTile(
-                                  title: const Text("Aggressive Analysis"),
-                                  leading: Radio(
-                                      value: null,
-                                      groupValue: null,
-                                      onChanged: null
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                height: 40,
-                                width: 220,
-                                child: ListTile(
-                                  title: const Text("Opcode Analysis"),
-                                  leading: Radio(
-                                      value: null,
-                                      groupValue: null,
-                                      onChanged: null
-                                  ),
-                                ),
-                              ),
+                              RadioNormal(),
+                              RadioAll(),
+                              RadioOpcode(),
                             ],
                           ),
                         ),
                       ),
+                      // Space the bottom out
+                      Expanded(
+                        child: Container(
+                          height: 8,
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
-              /*
-
-
-               */
-              // TODO: Add function to onPressed parameter
-              Container(
-                alignment: Alignment.bottomRight,
-                padding: const EdgeInsets.all(10),
-                child: ElevatedButton(onPressed: null, child: Text("Process")),
-              )
+              ProcessButton(),
             ],
-          )
-          ,
+          ),
         ],
       ),
     );

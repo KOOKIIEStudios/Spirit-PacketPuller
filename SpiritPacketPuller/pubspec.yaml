@@ -30,7 +30,7 @@ dependencies:
   # COMMENTED IMPORT OUT BECAUSE IMPORT FAILED. https://github.com/flutter/flutter/issues/66224
   # Devs still working on a fix. See issue linked above
   # window_size:
-    # This is only required because Flutter does not currently fully support window resizing on desktop
+    # This is only required because Flutter does not currently fully support window resizing (or custom icons) on desktop
     # This is be merged into the Flutter build and no longer required in future Flutter builds
     # Note that this plugin currently only supports resizing and repositioning
     # Minimising and maximising of windows is yet to be implemented at the time of writing
