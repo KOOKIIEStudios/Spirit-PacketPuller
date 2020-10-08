@@ -13,6 +13,7 @@ fontSize: 16,
 fontWeight: FontWeight.bold,
 );
 
+enum Radios { normal, all, opcode }
 const normal = Text("Normal Analysis");
 const all = Text("Aggressive Analysis");
 const opcode = Text("Opcode Analysis");

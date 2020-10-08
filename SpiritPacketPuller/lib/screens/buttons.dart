@@ -17,7 +17,9 @@
 
 // THIS IS A PLACEHOLDER FILE
 
+import 'package:SpiritPacketPuller/models/radio_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
 import 'constants.dart';
 
@@ -46,62 +48,94 @@ class ButtonsBar extends StatelessWidget{
   }
 }
 
-class RadioNormal extends StatelessWidget{
-  Widget build(BuildContext context){
-    logger.d("Building Radio Button 1");
-    return Container(
-      alignment: Alignment.centerLeft,
-      height: 20,
-      width: 220,
-      child: ListTile(
-        dense: true,
-        title: normal,
-        leading: Radio(
-            value: null,
-            groupValue: null,
-            onChanged: null
-        ),
-      ),
-    );
+// Radio set
+class RadioSet extends StatefulWidget {
+  RadioSet({Key key}) : super(key: key);
+
+  @override
+  RadioSetState createState(){
+    logger.d("Creating state for Radio buttons");
+    return new RadioSetState();
   }
 }
 
-class RadioAll extends StatelessWidget{
-  Widget build(BuildContext context){
-    logger.d("Building Radio Button 1");
-    return Container(
-      alignment: Alignment.centerLeft,
-      height: 20,
-      width: 230,
-      child: ListTile(
-        dense: true,
-        title: all,
-        leading: Radio(
-            value: null,
-            groupValue: null,
-            onChanged: null
-        ),
-      ),
-    );
+// State management for Radio buttons
+class RadioSetState extends State<RadioSet>{
+  @override
+  Widget build(BuildContext context) {
+    logger.d("Building Radio Set");
+    return _radios();
   }
-}
 
-class RadioOpcode extends StatelessWidget{
-  Widget build(BuildContext context){
-    logger.d("Building Radio Button 1");
-    return Container(
-      alignment: Alignment.centerLeft,
-      height: 20,
-      width: 220,
-      child: ListTile(
-        dense: true,
-        title: opcode,
-        leading: Radio(
-            value: null,
-            groupValue: null,
-            onChanged: null
-        ),
-      ),
+  Widget _radios(){
+    return Consumer<RadioModel>(
+        builder: (context, radioSet, child){
+          return Container(
+            height: 20,
+            child: Row(
+              children: [
+                // TODO:: Add Radio logic
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: 20,
+                  width: 220,
+                  child: ListTile(
+                    dense: true,
+                    title: normal,
+                    leading: Radio(
+                      value: Radios.normal,
+                      groupValue: radioSet.choice,
+                      onChanged: (Radios value){
+                        setState(() {
+                          logger.d("Radio1 Clicked!");
+                          radioSet.choice = value;
+                        });
+                      }
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: 20,
+                  width: 230,
+                  child: ListTile(
+                    dense: true,
+                    title: all,
+                    leading: Radio(
+                        value: Radios.all,
+                        groupValue: radioSet.choice,
+                        onChanged: (Radios value){
+                          setState(() {
+                            logger.d("Radio2 Clicked!");
+                            radioSet.choice = value;
+                          });
+                        }
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: 20,
+                  width: 220,
+                  child: ListTile(
+                    dense: true,
+                    title: opcode,
+                    leading: Radio(
+                        value: Radios.opcode,
+                        groupValue: radioSet.choice,
+                        onChanged: (Radios value){
+                          setState(() {
+                            logger.d("Radio2 Clicked!");
+                            radioSet.choice = value;
+                          });
+                        }
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
     );
   }
 }

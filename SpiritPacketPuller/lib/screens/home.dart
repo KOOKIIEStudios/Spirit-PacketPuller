@@ -78,17 +78,7 @@ class Home extends StatelessWidget{
                       ),
                       Expanded(
                         flex: 1,
-                        child: Container(
-                          height: 20,
-                          child: Row(
-                            children: [
-                              // TODO:: Add Radio logic
-                              RadioNormal(),
-                              RadioAll(),
-                              RadioOpcode(),
-                            ],
-                          ),
-                        ),
+                        child: RadioSet(),
                       ),
                       // Space the bottom out
                       Expanded(
