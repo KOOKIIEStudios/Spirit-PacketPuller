@@ -34,6 +34,7 @@ class InputListState extends State<InputList>{
     return Consumer2<InputListModel, OutputListModel>(
       builder: (context, inputList, outputList, child){
         return ListView.builder(
+          itemCount: inputList.length,
           itemBuilder: (context, index) {
             List<String> availableFiles = inputList.availableFiles;
             final element = availableFiles[index];
@@ -79,6 +80,7 @@ class OutputListState extends State<OutputList>{
     return Consumer2<InputListModel, OutputListModel>(
       builder: (context, inputList, outputList, child){
         return ListView.builder(
+          itemCount: outputList.length,
           itemBuilder: (context, index){
             List<String> selectedFiles = outputList.selectedFiles;
             final element = selectedFiles[index];

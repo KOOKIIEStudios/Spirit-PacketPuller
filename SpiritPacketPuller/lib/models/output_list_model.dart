@@ -15,6 +15,9 @@ class OutputListModel extends ChangeNotifier{
   // Getter function: Fetch list of files (public)
   List<String> get selectedFiles => _fileList;
 
+  // Getter function: Fetch length of list (public)
+  int get length => _fileList.length;
+
   // Select All function. Copies all files in Input List into Output List
   void selectAll(List<String> availableFiles){
     logger.d("Selecting all files from Input List");

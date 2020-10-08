@@ -5,4 +5,4 @@ Analyses IDA-generated pseudocode for packet structure and opcodes. A Flutter-ba
 ![](https://i.imgur.com/OMbChUD.png)
 
 ## Prototype GUI
-![](https://i.imgur.com/Zmsc22x.png)
+![](https://i.imgur.com/Eh4hAcm.png)

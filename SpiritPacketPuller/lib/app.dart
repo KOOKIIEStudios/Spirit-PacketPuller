@@ -22,7 +22,7 @@ class App extends StatelessWidget{
           ChangeNotifierProvider<InputListModel>(create: (context) => InputListModel()),
           ChangeNotifierProvider<OutputListModel>(create: (context) => OutputListModel()),
         ],
-        child: Home(),
+        child: MaterialApp(home: Home(),),
     );
   }
 }

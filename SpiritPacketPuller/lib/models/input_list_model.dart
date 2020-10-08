@@ -13,6 +13,9 @@ class InputListModel extends ChangeNotifier{
   // Getter function: Fetch list of files (public)
   List<String> get availableFiles => _fileList;
 
+  // Getter function: Fetch length of list (public)
+  int get length => _fileList.length;
+
   // Refresh function. Re-fetches list of available files, and re-builds widget
   void refreshList(){
     _fileList.clear();
