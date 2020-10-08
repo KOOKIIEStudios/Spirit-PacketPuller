@@ -22,6 +22,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
 import 'constants.dart';
+import '../models/input_list_model.dart';
+import '../models/output_list_model.dart';
 
 var logger = Logger(
     printer: PrettyPrinter()
@@ -30,20 +32,31 @@ var logger = Logger(
 class ButtonsBar extends StatelessWidget{
   Widget build(BuildContext context){
     logger.d("Building Button Bar");
-    return ButtonBar(
-      // Row for Select/Refresh/Deselect buttons
-      mainAxisSize: MainAxisSize.max,
-      alignment: MainAxisAlignment.start,
-      buttonHeight: 60,
-      buttonMinWidth: 300,
-      buttonPadding: const EdgeInsets.only(left: 20),
-      children: [
-        // TODO: Refactor text to a constants file
-        // TODO: Add button logic
-        OutlinedButton(onPressed: null, child: Text("Select All")),
-        OutlinedButton(onPressed: null, child: Text("Refresh")),
-        OutlinedButton(onPressed: null, child: Text("Deselect All")),
-      ],
+    return Consumer2<InputListModel, OutputListModel>(
+        builder: (context, inputList, outputList, child){
+          return ButtonBar(
+            // Row for Select/Refresh/Deselect buttons
+            mainAxisSize: MainAxisSize.max,
+            alignment: MainAxisAlignment.start,
+            buttonHeight: 60,
+            buttonMinWidth: 300,
+            buttonPadding: const EdgeInsets.only(left: 20),
+            children: [
+              OutlinedButton(
+                  onPressed: () => outputList.selectAll(inputList.availableFiles),
+                  child: selectButton
+              ),
+              OutlinedButton(
+                  onPressed: () => inputList.refreshList(),
+                  child: refreshButton
+              ),
+              OutlinedButton(
+                  onPressed: () => outputList.clearList(),
+                  child: deselectButton
+              ),
+            ],
+          );
+        }
     );
   }
 }
@@ -74,7 +87,6 @@ class RadioSetState extends State<RadioSet>{
             height: 20,
             child: Row(
               children: [
-                // TODO:: Add Radio logic
                 Container(
                   alignment: Alignment.centerLeft,
                   height: 20,
@@ -150,9 +162,16 @@ class ProcessButton extends StatelessWidget{
       child: SizedBox(
         height: 40,
         width: 140,
-        child: ElevatedButton(
-          onPressed: null,
-          child: process,
+        child: Consumer2<OutputListModel, RadioModel>(
+          builder: (context, outputList, radioSet, child){
+            return ElevatedButton(
+              onPressed: (){
+                // API functions to go here:
+
+              },
+              child: process,
+            );
+          }
         ),
       ),
     );

@@ -1,6 +1,5 @@
 // Home: Main (and only) window.
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
@@ -18,8 +17,7 @@ class Home extends StatelessWidget{
     logger.d("Start building Home");
     return Scaffold(
       appBar: AppBar(
-        // TODO: Refactor text to a constants file
-        title: Text('Spirit Pseudocode Analysis Tool v0.0.1'),
+        title: title,
       ),
       body:
       // Main column holding everything
