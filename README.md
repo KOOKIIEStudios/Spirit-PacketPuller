@@ -1,8 +1,9 @@
 # Spirit PacketPuller
-Analyses IDA-generated pseudocode for packet structure and opcodes.
+[**A SPIRIT SUITE TOOL**](https://github.com/KOOKIIEStudios/SpiritSuite)\
+Spirit PacketPuller analyses IDA-generated pseudocode for packet structure and opcodes.
 
-An open-source Flutter-based re-implementation of the GUI implementation of MaplePacketPuller.\
-The core engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).
+An open-source Flutter-based re-implementation of the [GUI implementation](https://github.com/KOOKIIEStudios/Spirit-PacketPuller-OLD) of [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).\
+The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).
 
 ## Milestones:
 Target: | State: |
@@ -12,7 +13,8 @@ GUI Logic: | ![100%](https://progress-bar.dev/100)
 Core Logic | ![0%](https://progress-bar.dev/0)
 Simple Accuracy Test | ![0%](https://progress-bar.dev/0)
 
-Note: Development of core engine (and its testing) are part of a private sister project.\
+**Current Status:** *HALTED!*\
+**Note:** Development of the core analysis engine used in this project (and its testing) are a part of a private sister project.\
 Spirit PacketPuller will resume development once said sister project has succesfully completed accuracy tests against the original [MaplePacketPuller Project](https://github.com/Bratah123/MaplePacketPuller).
 
 ## Platform:
@@ -21,7 +23,7 @@ Target Platform: | Tested: |
 Windows 10 Version 2004 | Windows 10 Version 2004
 
 ### To be tested by contributors:
-Add on to the list as done, if you ran with a previously untested version successfully:
+*Kindly on to the list as* done, *if you ran with a previously untested version successfully:*
 - [ ] Windows 10 1909 or earlier
 - [ ] Windows 8
 - [ ] Windows 7
@@ -54,6 +56,8 @@ The Flutter Desktop builds are currently experimental and in either Alpha or (in
 At the moment, they may only be build on the target platform.\
 **Windows 10 Version 2004 is the official target platform for this project.**
 
+Refer to the inner [README](https://github.com/KOOKIIEStudios/Spirit-PacketPuller/tree/main/SpiritPacketPuller) for an overview of the folder structure.
+
 1. Install [**Flutter Desktop**](https://flutter.dev/desktop).
 2. `Clone`/`Fork` the repository.
-3. Navigate to the porject directory in a CLI, and use `flutter pub get` to grab all dependencies.
+3. Navigate to the porject directory in a CLI *(I use PowerShell 7)*, and use command `flutter pub get` to grab all dependencies.
