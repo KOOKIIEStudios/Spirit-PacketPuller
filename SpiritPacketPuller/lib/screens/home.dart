@@ -30,7 +30,7 @@ class Home extends StatelessWidget{
             children: [
               // TODO: Insert the 2 lists
               Text(
-                "Input:",
+                "Files Detected:",
                 style: TextStyle(
                   fontFamily: "GillSans",
                   fontSize: 16,
@@ -38,7 +38,7 @@ class Home extends StatelessWidget{
                 ),
               ),
               Text(
-                "Output:",
+                "Files Selected:",
                 style: TextStyle(
                   fontFamily: "GillSans",
                   fontSize: 16,
