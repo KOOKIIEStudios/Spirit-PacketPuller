@@ -10,7 +10,7 @@ Target: | State: |
 ---|---
 GUI Design: | ![100%](https://progress-bar.dev/100)
 GUI Logic: | ![100%](https://progress-bar.dev/100)
-Core Logic | ![0%](https://progress-bar.dev/0)
+Core Logic | ![80%](https://progress-bar.dev/80)
 Simple Accuracy Test | ![0%](https://progress-bar.dev/0)
 
 **Current Status:** *HALTED!*\
