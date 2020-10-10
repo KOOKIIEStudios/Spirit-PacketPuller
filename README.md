@@ -38,6 +38,19 @@ Windows 10 Version 2004 | Windows 10 Version 2004
 **GUI updated:** *8th October 2020*
 
 ---
+## API Documentation
+**Closed-source Library:** Packet Structure Extraction Engine
+
+### Included Sub-libraries
+![](https://i.imgur.com/OQc0sGX.png)
+---
+### Outward-facing API
+![](https://i.imgur.com/8q6v8uB.png)
+---
+![](https://i.imgur.com/DQWop8j.png)
+---
+![](https://i.imgur.com/ruVJMtW.png)
+---
 # Instructions
 ## Instructions For Use
 1. Click on items in the `Files Detected` list to **select** them.
