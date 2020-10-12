@@ -3,17 +3,18 @@
 Spirit PacketPuller analyses IDA-generated pseudocode for packet structure and opcodes.
 
 An open-source Flutter-based re-implementation of the [GUI implementation](https://github.com/KOOKIIEStudios/Spirit-PacketPuller-OLD) of [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).\
-The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).
+<del>The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).</del>
+The core analysis logic now only inherits in-header opcode extarction logic. Normal and aggressive modes have been re-designed.
 
 ## Milestones:
 Target: | State: |
 ---|---
 GUI Design: | ![100%](https://progress-bar.dev/100)
 GUI Logic: | ![100%](https://progress-bar.dev/100)
-Core Logic | ![80%](https://progress-bar.dev/80)
+Core Logic | ![50%](https://progress-bar.dev/50)
 Simple Accuracy Test | ![0%](https://progress-bar.dev/0)
 
-**Current Status:** *HALTED!*\
+**Current Status:** *HALTED! Awaiting completiong of PacketAnalyserEngine*\
 **Note:** Development of the core analysis engine used in this project (and its testing) are a part of a private sister project.\
 Spirit PacketPuller will resume development once said sister project has succesfully completed accuracy tests against the original [MaplePacketPuller Project](https://github.com/Bratah123/MaplePacketPuller).
 
@@ -38,19 +39,6 @@ Windows 10 Version 2004 | Windows 10 Version 2004
 **GUI updated:** *8th October 2020*
 
 ---
-## API Documentation
-**Closed-source Library:** Packet Structure Extraction Engine
-
-### Included Sub-libraries
-![](https://i.imgur.com/OQc0sGX.png)
----
-### Outward-facing API
-![](https://i.imgur.com/8q6v8uB.png)
----
-![](https://i.imgur.com/DQWop8j.png)
----
-![](https://i.imgur.com/ruVJMtW.png)
----
 # Instructions
 ## Instructions For Use
 1. Click on items in the `Files Detected` list to **select** them.
@@ -74,3 +62,17 @@ Refer to the inner [README](https://github.com/KOOKIIEStudios/Spirit-PacketPulle
 1. Install [**Flutter Desktop**](https://flutter.dev/desktop).
 2. `Clone`/`Fork` the repository.
 3. Navigate to the porject directory in a CLI *(I use PowerShell 7)*, and use command `flutter pub get` to grab all dependencies.
+
+---
+## API Documentation
+**Closed-source Library:** Packet Structure Extraction Engine
+
+### Included Sub-libraries
+![](https://i.imgur.com/OQc0sGX.png)
+---
+### Outward-facing API
+![](https://i.imgur.com/8q6v8uB.png)
+---
+![](https://i.imgur.com/DQWop8j.png)
+---
+![](https://i.imgur.com/ruVJMtW.png)
