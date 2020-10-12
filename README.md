@@ -3,8 +3,8 @@
 Spirit PacketPuller analyses IDA-generated pseudocode for packet structure and opcodes.
 
 An open-source Flutter-based re-implementation of the [GUI implementation](https://github.com/KOOKIIEStudios/Spirit-PacketPuller-OLD) of [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).\
-<del>The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).</del>
-The core analysis logic now only inherits in-header opcode extarction logic. Normal and aggressive modes have been re-designed.
+<del>The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).</del>\
+The core analysis logic now only inherits in-header opcode extraction logic. Normal and aggressive modes have been re-designed.
 
 ## Milestones:
 Target: | State: |
