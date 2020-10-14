@@ -15,7 +15,7 @@ Core Logic | ![100%](https://progress-bar.dev/100)
 Simple Accuracy Test | ![100%](https://progress-bar.dev/100)
 
 **Current Status:** *HALTED! Awaiting Flutter team to fix critical bugs*\
-Currently waiting for the Flutter team to handle a similar problem as described (here)[https://github.com/flutter/flutter/issues/66224].
+Currently waiting for the Flutter team to handle a similar problem as described [here](https://github.com/flutter/flutter/issues/66224).
 The application is otherwise complete and ready for RC1 (version number: 0.1.0)
 ## Platform:
 Target Platform: | Tested: |
