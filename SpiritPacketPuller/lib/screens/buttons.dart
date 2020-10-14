@@ -20,10 +20,13 @@
 import 'package:SpiritPacketPuller/models/radio_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'constants.dart';
 import '../models/input_list_model.dart';
 import '../models/output_list_model.dart';
+import 'package:packet_analyser_engine/packet_analyser_engine.dart' as engine;
 
 var logger = Logger(
     printer: PrettyPrinter()
@@ -152,7 +155,7 @@ class RadioSetState extends State<RadioSet>{
   }
 }
 
-// TODO: Add function to onPressed parameter
+// TODO: Add status to onPressed parameter
 class ProcessButton extends StatelessWidget{
   Widget build(BuildContext context){
     logger.d("Building Process Button");
@@ -165,9 +168,12 @@ class ProcessButton extends StatelessWidget{
         child: Consumer2<OutputListModel, RadioModel>(
           builder: (context, outputList, radioSet, child){
             return ElevatedButton(
-              onPressed: (){
+              onPressed: () async {
                 // API functions to go here:
-                // use describeEnum(radioSet.choice)
+                await engine.process(
+                    outputList.selectedFiles,
+                    describeEnum(radioSet.choice)
+                );
               },
               child: process,
             );

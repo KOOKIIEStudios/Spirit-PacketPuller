@@ -4,7 +4,7 @@
 // Input/Output Lists
 import 'package:flutter/material.dart';
 
-const title = Text('Spirit Pseudocode Analysis Tool v0.0.2');
+const title = Text('Spirit Pseudocode Analysis Tool v0.1.0');
 
 String inputListLabel = "Files Detected:";
 String outputListLabel = "Files Selected:";

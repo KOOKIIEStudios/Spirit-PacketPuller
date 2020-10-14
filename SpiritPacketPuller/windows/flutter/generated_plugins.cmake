@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  packet_analyser_engine
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

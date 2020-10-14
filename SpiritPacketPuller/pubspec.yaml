@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 0.1.0+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -26,6 +26,8 @@ dependencies:
   lint: ^1.3.0
   logger: ^0.9.4
   provider: ^4.3.2
+  packet_analyser_engine:
+    path: ../packet_analyser_engine
   # Experimental plugin as place-holder:
   # COMMENTED IMPORT OUT BECAUSE IMPORT FAILED. https://github.com/flutter/flutter/issues/66224
   # Devs still working on a fix. See issue linked above

@@ -33,6 +33,7 @@ class InputListState extends State<InputList>{
   Widget _inputList(){
     return Consumer2<InputListModel, OutputListModel>(
       builder: (context, inputList, outputList, child){
+        inputList.refreshList(); // Initialise contents
         return ListView.builder(
           itemCount: inputList.length,
           itemBuilder: (context, index) {
@@ -102,5 +103,3 @@ class OutputListState extends State<OutputList>{
   }
 }
 
-
-// Contain the 2 lists in a row

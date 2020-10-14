@@ -11,13 +11,12 @@ Target: | State: |
 ---|---
 GUI Design: | ![100%](https://progress-bar.dev/100)
 GUI Logic: | ![100%](https://progress-bar.dev/100)
-Core Logic | ![50%](https://progress-bar.dev/50)
-Simple Accuracy Test | ![0%](https://progress-bar.dev/0)
+Core Logic | ![100%](https://progress-bar.dev/100)
+Simple Accuracy Test | ![100%](https://progress-bar.dev/100)
 
-**Current Status:** *HALTED! Awaiting completiong of PacketAnalyserEngine*\
-**Note:** Development of the core analysis engine used in this project (and its testing) are a part of a private sister project.\
-Spirit PacketPuller will resume development once said sister project has succesfully completed accuracy tests against the original [MaplePacketPuller Project](https://github.com/Bratah123/MaplePacketPuller).
-
+**Current Status:** *HALTED! Awaiting Flutter team to fix critical bugs*\
+Currently waiting for the Flutter team to handle a similar problem as described (here)[https://github.com/flutter/flutter/issues/66224].
+The application is otherwise complete and ready for RC1 (version number: 0.1.0)
 ## Platform:
 Target Platform: | Tested: |
 ---|---
