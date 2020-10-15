@@ -38,8 +38,12 @@ Windows 10 Version 2004 | Windows 10 Version 1803
 ![](https://i.imgur.com/OMbChUD.png)
 
 ## Prototype GUI
-![](https://i.imgur.com/1A5tMq0.png)
-**GUI sample updated:** *8th October 2020*
+### Start-up screen
+![](https://i.imgur.com/ojLrAdx.png)
+
+### On Refresh
+![](https://i.imgur.com/Chlc08n.png)
+**GUI sample updated:** *15th October 2020*
 
 ---
 # Instructions
@@ -74,7 +78,8 @@ Refer to the inner [README](https://github.com/KOOKIIEStudios/Spirit-PacketPulle
 
 ---
 ## API Documentation
-**Closed-source Library:** Packet Structure Extraction Engine
+**Closed-source Library:** Packet Structure Extraction Engine\
+Note: These screenshots of the API Docs were from v0.0.2. There have been backwards-compatible changes made since that version.
 
 ### Included Sub-libraries
 ![](https://i.imgur.com/OQc0sGX.png)
