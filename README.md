@@ -16,8 +16,8 @@ GUI Logic: | ![100%](https://progress-bar.dev/100)
 Core Logic | ![100%](https://progress-bar.dev/100)
 Simple Accuracy Test | ![100%](https://progress-bar.dev/100)
 
-**Current Status:** *Release Candidate 1 (v0.1.1-alpha) is out now!*\
-[Download the current pre-release here](https://github.com/KOOKIIEStudios/Spirit-PacketPuller/releases/tag/v0.1.1-alpha)\
+**Current Status:** *Release Candidate 2 (v0.2.0-alpha) is out now!*\
+[Download the releases here](https://github.com/KOOKIIEStudios/Spirit-PacketPuller/releases)\
 **Known issues for building from source:**
   - Currently waiting for the Flutter team to handle a similar problem as described [here](https://github.com/flutter/flutter/issues/66224).
 
