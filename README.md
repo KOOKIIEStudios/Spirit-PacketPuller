@@ -24,11 +24,11 @@ Simple Accuracy Test | ![100%](https://progress-bar.dev/100)
 ## Platform:
 Target Platform: | Tested: |
 ---|---
-Windows 10 Version 2004 | Windows 10 Version 1803
+Windows 10 Version 2004 | Windows 10 Version 1809
 
 ### To be tested by contributors:
 *Kindly on to the list as* done, *if you ran with a previously untested version successfully:*
-- [ ] Windows 10 1909 or earlier (skip 1803)
+- [ ] Windows 10 1909 or earlier (skip 1809)
 - [ ] Windows 8
 - [ ] Windows 7
 
