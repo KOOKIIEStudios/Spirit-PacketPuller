@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'models/input_list_model.dart';
 import 'models/output_list_model.dart';
 import 'models/radio_model.dart';
+import 'models/status_bar_model.dart';
 import 'screens/home.dart';
 
 var logger = Logger(
@@ -23,6 +24,7 @@ class App extends StatelessWidget{
           ChangeNotifierProvider<InputListModel>(create: (context) => InputListModel()),
           ChangeNotifierProvider<OutputListModel>(create: (context) => OutputListModel()),
           ChangeNotifierProvider<RadioModel>(create: (context) => RadioModel()),
+          ChangeNotifierProvider<StatusBarModel>(create: (context) => StatusBarModel()),
         ],
         child: MaterialApp(home: Home(),),
     );

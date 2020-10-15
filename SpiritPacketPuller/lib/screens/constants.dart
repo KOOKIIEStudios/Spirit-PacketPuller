@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 const title = Text(
-    'Spirit Pseudocode Analysis Tool Release Candidate v0.1.1-alpha',
+    'Spirit Pseudocode Analysis Tool Release Candidate v0.2.0-alpha',
     style: titleStyle,
 );
 
@@ -24,12 +24,22 @@ fontSize: 18,
 fontWeight: FontWeight.bold,
 );
 
+const TextStyle statusStyle = TextStyle(
+  fontFamily: "Effra",
+  fontSize: 14,
+  fontWeight: FontWeight.normal,
+);
+
 const selectButton = Text("Select All");
 const refreshButton = Text("Refresh");
 const deselectButton = Text("Deselect All");
-enum Radios { normal, all, opcode }
+enum Radios { normal, all, inheader, outheader }
 const normal = Text("Normal Analysis");
 const all = Text("Aggressive Analysis");
-const opcode = Text("Opcode Analysis");
+const inheader = Text("Opcode Analysis");
+const outheader = Text("Opcode Analysis");
 
+
+const String stat = "Status: ";
+const String processing = "Status: Processing...";
 const process = Text("Process");

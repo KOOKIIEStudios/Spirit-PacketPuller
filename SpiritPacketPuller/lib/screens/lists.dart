@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
-import 'constants.dart';
 import '../models/input_list_model.dart';
 import '../models/output_list_model.dart';
 
@@ -34,7 +33,6 @@ class InputListState extends State<InputList>{
   Widget _inputList(){
     return Consumer2<InputListModel, OutputListModel>(
       builder: (context, inputList, outputList, child){
-        //inputList.refreshList(); // Initialise contents
         return ListView.builder(
           itemCount: inputList.length,
           itemBuilder: (context, index) {

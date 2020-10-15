@@ -17,7 +17,6 @@
 
 // THIS IS A PLACEHOLDER FILE
 
-import 'package:SpiritPacketPuller/models/radio_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:async';
@@ -26,6 +25,8 @@ import 'package:logger/logger.dart';
 import 'constants.dart';
 import '../models/input_list_model.dart';
 import '../models/output_list_model.dart';
+import 'package:SpiritPacketPuller/models/radio_model.dart';
+import 'package:SpiritPacketPuller/models/status_bar_model.dart';
 import 'package:packet_analyser_engine/packet_analyser_engine.dart' as engine;
 
 var logger = Logger(
@@ -137,13 +138,32 @@ class RadioSetState extends State<RadioSet>{
                   width: 220,
                   child: ListTile(
                     dense: true,
-                    title: opcode,
+                    title: inheader,
                     leading: Radio(
-                        value: Radios.opcode,
+                        value: Radios.inheader,
                         groupValue: radioSet.choice,
                         onChanged: (Radios value){
                           setState(() {
-                            logger.d("Radio2 Clicked!");
+                            logger.d("Radio3 Clicked!");
+                            radioSet.choice = value;
+                          });
+                        }
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  height: 20,
+                  width: 220,
+                  child: ListTile(
+                    dense: true,
+                    title: outheader,
+                    leading: Radio(
+                        value: Radios.outheader,
+                        groupValue: radioSet.choice,
+                        onChanged: (Radios value){
+                          setState(() {
+                            logger.d("Radio4 Clicked!");
                             radioSet.choice = value;
                           });
                         }
@@ -168,15 +188,17 @@ class ProcessButton extends StatelessWidget{
       child: SizedBox(
         height: 40,
         width: 140,
-        child: Consumer2<OutputListModel, RadioModel>(
-          builder: (context, outputList, radioSet, child){
+        child: Consumer3<OutputListModel, RadioModel, StatusBarModel>(
+          builder: (context, outputList, radioSet, statusbar, child){
             return ElevatedButton(
               onPressed: () async {
+                statusbar.status = processing; // Set status on click
                 // API functions to go here:
-                await engine.process(
+                String result = await engine.process(
                     outputList.selectedFiles,
                     describeEnum(radioSet.choice)
                 );
+                statusbar.status = stat+result; // Set status on finish
                 outputList.clearList();
               },
               child: process,

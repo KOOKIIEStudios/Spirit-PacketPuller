@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
 import 'lists.dart';
 import 'buttons.dart';
+import 'status.dart';
 import 'constants.dart';
 
 var logger = Logger(
@@ -71,17 +72,19 @@ class Home extends StatelessWidget{
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
-                        flex: 2,
+                        flex: 4,
                         child: ButtonsBar()
                       ),
                       Expanded(
-                        flex: 1,
+                        flex: 2,
                         child: RadioSet(),
                       ),
-                      // Space the bottom out
+                      // Status Bar
                       Expanded(
+                        flex: 1,
                         child: Container(
-                          height: 8,
+                          height: 20,
+                          child: StatusBar(),
                         ),
                       )
                     ],
