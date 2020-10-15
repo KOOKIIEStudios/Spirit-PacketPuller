@@ -26,7 +26,7 @@ fontWeight: FontWeight.bold,
 
 const TextStyle statusStyle = TextStyle(
   fontFamily: "Effra",
-  fontSize: 14,
+  fontSize: 15,
   fontWeight: FontWeight.normal,
 );
 
@@ -36,8 +36,8 @@ const deselectButton = Text("Deselect All");
 enum Radios { normal, all, inheader, outheader }
 const normal = Text("Normal Analysis");
 const all = Text("Aggressive Analysis");
-const inheader = Text("Opcode Analysis");
-const outheader = Text("Opcode Analysis");
+const inheader = Text("In-header Opcode Analysis");
+const outheader = Text("Out-header Opcode Analysis");
 
 
 const String stat = "Status: ";

@@ -184,7 +184,7 @@ class ProcessButton extends StatelessWidget{
     logger.d("Building Process Button");
     return Container(
       alignment: Alignment.bottomRight,
-      padding: const EdgeInsets.only(top: 30, right: 20),
+      padding: const EdgeInsets.only(top: 80, right: 20),
       child: SizedBox(
         height: 40,
         width: 140,

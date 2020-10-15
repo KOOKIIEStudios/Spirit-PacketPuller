@@ -1,6 +1,7 @@
 // Home: Main (and only) window.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
 import 'lists.dart';
@@ -46,13 +47,13 @@ class Home extends StatelessWidget{
             children: [
               Expanded(
                 child: Container(
-                  height: 500,
+                  height: 450,
                   child: InputList(),
                 ),
               ),
               Expanded(
                 child: Container(
-                  height: 500,
+                  height: 450,
                   child: OutputList(),
                 ),
               ),
@@ -66,24 +67,25 @@ class Home extends StatelessWidget{
                 flex: 2,
                 child: Container(
                   width: 300,
-                  height: 100,
+                  height: 150,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
-                        flex: 4,
+                        flex: 2,
                         child: ButtonsBar()
                       ),
                       Expanded(
-                        flex: 2,
+                        flex: 1,
                         child: RadioSet(),
                       ),
                       // Status Bar
                       Expanded(
                         flex: 1,
                         child: Container(
-                          height: 20,
+                          height: 60,
+                          padding: EdgeInsets.only(left: 10, top: 14),
                           child: StatusBar(),
                         ),
                       )
