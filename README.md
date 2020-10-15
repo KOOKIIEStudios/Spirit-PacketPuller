@@ -3,8 +3,10 @@
 Spirit PacketPuller analyses IDA-generated pseudocode for packet structure and opcodes.
 
 An open-source Flutter-based re-implementation of the [GUI implementation](https://github.com/KOOKIIEStudios/Spirit-PacketPuller-OLD) of [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).\
-<del>The core analysis engine is loosely based on the an open-source CLI-based sister project: [MaplePacketPuller](https://github.com/Bratah123/MaplePacketPuller).</del>\
-The core analysis logic now only inherits in-header opcode extraction logic. Normal and aggressive modes have been re-designed.
+The core analysis logic inherits MaplePacketPuller's in-header opcode extraction logic. Normal and aggressive modes have been re-designed.
+An out-header opcode extraction feature may or may not be added in the future.
+
+**NOTE:** *Normal Mode* does not support multiple same-level nested blocks. The decode functions will be extracted correctly, but the indentations will be off. Please use *Aggressive Mode* instead.
 
 ## Milestones:
 Target: | State: |
@@ -14,17 +16,19 @@ GUI Logic: | ![100%](https://progress-bar.dev/100)
 Core Logic | ![100%](https://progress-bar.dev/100)
 Simple Accuracy Test | ![100%](https://progress-bar.dev/100)
 
-**Current Status:** *HALTED! Awaiting Flutter team to fix critical bugs*\
-Currently waiting for the Flutter team to handle a similar problem as described [here](https://github.com/flutter/flutter/issues/66224).
-The application is otherwise complete and ready for RC1 (version number: 0.1.0)
+**Current Status:** *Release Candidate 1 (v0.1.1-alpha) is out now!*\
+[Download the current pre-release here](https://github.com/KOOKIIEStudios/Spirit-PacketPuller/releases/tag/v0.1.1-alpha)\
+**Known issues for building from source:**
+  - Currently waiting for the Flutter team to handle a similar problem as described [here](https://github.com/flutter/flutter/issues/66224).
+
 ## Platform:
 Target Platform: | Tested: |
 ---|---
-Windows 10 Version 2004 | Windows 10 Version 2004
+Windows 10 Version 2004 | Windows 10 Version 1803
 
 ### To be tested by contributors:
 *Kindly on to the list as* done, *if you ran with a previously untested version successfully:*
-- [ ] Windows 10 1909 or earlier
+- [ ] Windows 10 1909 or earlier (skip 1803)
 - [ ] Windows 8
 - [ ] Windows 7
 
@@ -35,18 +39,24 @@ Windows 10 Version 2004 | Windows 10 Version 2004
 
 ## Prototype GUI
 ![](https://i.imgur.com/1A5tMq0.png)
-**GUI updated:** *8th October 2020*
+**GUI sample updated:** *8th October 2020*
 
 ---
 # Instructions
 ## Instructions For Use
-1. Click on items in the `Files Detected` list to **select** them.
+
+This pseudocode analysis tool is intended to be used alongside the **Spirit IDA Plugin**, which allows users to extract pseudocode into text files automatically.
+
+1. Click **Refresh** to get the list of files.
+2. Click on items in the `Files Detected` list to **select** them.
     - Similarly click on items in the `Files Selected` list to **deselect** them.
-2. Click on the options at the bottom if you would like to use an **advanced** mode.
+3. Click on the options at the bottom if you would like to use an **advanced** mode.
     - **Normal Analysis** will attempt to extract the packet structure from the provided pseudocode files, and then attempt to beautify them for increased legibility.
-    - **Agressive Analysis** may give more accurate results, but have poor aesthetics/legibility.
+        - This mode is only recommended for analysing simple pseudocode.
+    - **Agressive Analysis** gives significantly more accurate results, at the cost of aesthetics/legibility.
+        - This mode is recommended for more complex pseudocode.
     - **Opcode Analysis** strips out (and retains only) the in-header opcodes for ease of reference.
-3. Click `Process` to start analysing.
+4. Click `Process` to start analysing.
 
 ---
 
