@@ -50,7 +50,10 @@ class ButtonsBar extends StatelessWidget{
                   child: selectButton
               ),
               OutlinedButton(
-                  onPressed: () => inputList.refreshList(),
+                  onPressed: () {
+                    inputList.refreshList();
+                    outputList.clearList();
+                  },
                   child: refreshButton
               ),
               OutlinedButton(
@@ -174,6 +177,7 @@ class ProcessButton extends StatelessWidget{
                     outputList.selectedFiles,
                     describeEnum(radioSet.choice)
                 );
+                outputList.clearList();
               },
               child: process,
             );

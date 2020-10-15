@@ -13,9 +13,9 @@ var logger = Logger(
 class InputListModel extends ChangeNotifier{
   // Private internal state of the Input List. Stores names of files.
   Future inputListFuture;
-  final List<String> _fileList = ["Lorem ipsum dolor sit amet,",
-    "consectetur adipiscing elit,",
-    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."];
+  final List<String> _fileList = ["Hit the refresh button to see",
+    "the list of files that can be processed.",
+    "Click on a file to select it."];
 
   // Getter function: Fetch list of files (public)
   List<String> get availableFiles => _fileList;

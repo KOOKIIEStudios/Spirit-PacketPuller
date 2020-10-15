@@ -4,14 +4,23 @@
 // Input/Output Lists
 import 'package:flutter/material.dart';
 
-const title = Text('Spirit Pseudocode Analysis Tool v0.1.0');
+const title = Text(
+    'Spirit Pseudocode Analysis Tool Release Candidate v0.1.1-alpha',
+    style: titleStyle,
+);
 
-String inputListLabel = "Files Detected:";
-String outputListLabel = "Files Selected:";
+const TextStyle titleStyle = TextStyle(
+  fontFamily: "Effra",
+  fontSize: 20,
+  fontWeight: FontWeight.normal,
+);
 
-TextStyle labelStyle = TextStyle(
+const String inputListLabel = "Files Detected:";
+const String outputListLabel = "Files Selected:";
+
+const TextStyle labelStyle = TextStyle(
 fontFamily: "GillSans",
-fontSize: 16,
+fontSize: 18,
 fontWeight: FontWeight.bold,
 );
 

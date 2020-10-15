@@ -65,7 +65,7 @@ class Home extends StatelessWidget{
                 flex: 2,
                 child: Container(
                   width: 300,
-                  height: 106,
+                  height: 100,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
