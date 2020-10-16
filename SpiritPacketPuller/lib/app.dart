@@ -7,6 +7,7 @@ import 'models/input_list_model.dart';
 import 'models/output_list_model.dart';
 import 'models/radio_model.dart';
 import 'models/status_bar_model.dart';
+import 'screens/constants.dart';
 import 'screens/home.dart';
 
 var logger = Logger(
@@ -26,7 +27,11 @@ class App extends StatelessWidget{
           ChangeNotifierProvider<RadioModel>(create: (context) => RadioModel()),
           ChangeNotifierProvider<StatusBarModel>(create: (context) => StatusBarModel()),
         ],
-        child: MaterialApp(home: Home(),),
+        child: MaterialApp(
+          theme: darkTheme, // Set the theme
+          //theme: oneDarkDraft, // Set the theme
+          home: Home(),
+        ),
     );
   }
 }

@@ -47,10 +47,14 @@ class ButtonsBar extends StatelessWidget{
             buttonPadding: const EdgeInsets.only(left: 20),
             children: [
               OutlinedButton(
+                  //style: buttonStyleBlue,
+                  style: buttonStyleGrey,
                   onPressed: () => outputList.selectAll(inputList.availableFiles),
                   child: selectButton
               ),
               OutlinedButton(
+                  //style: buttonStyleBlue,
+                  style: buttonStyleGrey,
                   onPressed: () {
                     inputList.refreshList();
                     outputList.clearList();
@@ -58,6 +62,8 @@ class ButtonsBar extends StatelessWidget{
                   child: refreshButton
               ),
               OutlinedButton(
+                  //style: buttonStyleBlue,
+                  style: buttonStyleGrey,
                   onPressed: () => outputList.clearList(),
                   child: deselectButton
               ),
